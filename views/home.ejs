@@ -1,0 +1,31 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+<link rel="stylesheet" href="/app.css">
+
+<div class="flex-container">
+    <div class="container">
+        <h1>COVID-19 Vaccinated Group</h1>
+        <p class="lead">Please enter your details to join <strong><%= count %></strong> others in the <strong>PROTECTED GANG</strong>. <strong>#CovidVaccination #IGotMyVaccine</strong></p>
+        <form method="POST" action='/registration'>
+            <input type="text" name="name" class="form" placeholder="Enter Your Name" required>
+            <br>
+            <input type="tel" pattern="[0-9]{10}" name="mobile_number" class="form" placeholder="Enter Your Mobile Number" required>
+            <br>
+            <input type="text" name="age" class="form" placeholder="Enter Your Age" required>
+            <br>
+            <input type="text" name="house_number" class="form" placeholder="Enter Your House Number" required>
+            <br>
+            <input type="text" name="vaccine_name" class="form" placeholder="Enter Your Vaccine Name" required>
+            <br>
+            <input type="text" name="final_dose_date" min="2020-01-01" class="form" placeholder="Enter Your Final Dose Date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+            <br>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+        <div class="wrapper">
+          <form method="POST">
+            <button class="button", formaction='/registered_individuals'>List of Vaccinated Members</button>
+            <button class="button", formaction='/delete_member'>Delete Member Details</button>
+          </form>
+        </div>
+    </div>
+</div>

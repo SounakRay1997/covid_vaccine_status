@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+<link rel="stylesheet" href="/app.css">
+
+<html lang="en">
+<head>
+  <title>RESPONSIBLE PEOPLE WHO GOT THEMSELVES VACCINATED</title>
+</head>
+<body>
+    <div class="table-data">
+<h2>RESPONSIBLE PEOPLE WHO GOT THEMSELVES VACCINATED</h2>
+    <table border="1">
+        <tr>
+            <th>Serial Number</th>
+            <th>Full Name</th>
+            <th>Mobile Number</th>
+            <th>Age</th>
+            <th>House Number</th>
+            <th>Vaccine Name</th>
+            <th>Final Dose Date</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=i; %></td>
+            <td><%=data.name %></td>
+            <td><%=data.mobile_no %></td>
+            <td><%=data.age %></td>
+            <td><%=data.house_number %></td>
+            <td><%=data.vaccine_name %></td>
+            <td><%=data.final_dose_date %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
